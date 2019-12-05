@@ -1,0 +1,21 @@
+uuid: ac83e6fa-7634-41de-830c-c96691e85caf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_customer_surname
+    - node.type.customer
+_core:
+  default_config_hash: nOgVoiuMUNAGhty0v1GANS0hINPlsgIUdvtEBUGqyro
+id: node.customer.field_customer_surname
+field_name: field_customer_surname
+entity_type: node
+bundle: customer
+label: 'Customer Surname'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

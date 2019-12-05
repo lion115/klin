@@ -1,0 +1,8 @@
+<?php
+
+//make title not required
+function klin_general_update_8002() {
+    Drupal::database()->query(
+      'ALTER TABLE `node_field_data` CHANGE `title` `title` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL;'
+    );
+}

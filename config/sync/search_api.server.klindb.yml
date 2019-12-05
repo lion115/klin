@@ -1,0 +1,17 @@
+uuid: 5761bba5-9722-4d9c-9f34-6bb77ca19b49
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: klindb
+name: klinDb
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: partial
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true

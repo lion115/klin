@@ -1,0 +1,61 @@
+uuid: 94ff8fad-30b9-4420-bb36-39c0bfe180ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.customer.body
+    - field.field.node.customer.field_customer_name
+    - field.field.node.customer.field_customer_surname
+    - field.field.node.customer.field_email
+    - field.field.node.customer.field_phone_number
+    - node.type.customer
+  module:
+    - phone_number
+    - user
+_core:
+  default_config_hash: _GVBihioUOM0mjkxbdyE5diYq1qcwzYOqNVSDOtlim0
+id: node.customer.teaser
+targetEntityType: node
+bundle: customer
+mode: teaser
+content:
+  field_customer_name:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_customer_surname:
+    type: string
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_email:
+    type: email_mailto
+    weight: 3
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  field_phone_number:
+    type: phone_number_international
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      as_link: '1'
+    third_party_settings: {  }
+  links:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  search_api_excerpt: true

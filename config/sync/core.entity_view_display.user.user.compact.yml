@@ -1,0 +1,30 @@
+uuid: 1630791a-8a6c-4b49-b2a3-34dad7fc08a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: Qbly3KMPEbDeyC9ucqvfEY87d6ttoMPHt1s2x0qCWFk
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  member_for: true
+  search_api_excerpt: true

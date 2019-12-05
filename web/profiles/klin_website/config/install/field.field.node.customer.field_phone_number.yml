@@ -1,0 +1,26 @@
+uuid: 09f62ed2-845f-418d-9a43-176144f1ab8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_number
+    - node.type.customer
+  module:
+    - phone_number
+id: node.customer.field_phone_number
+field_name: field_phone_number
+entity_type: node
+bundle: customer
+label: 'Phone number'
+description: '+3(80) will be added as prefix to phone number. Example: 931111111 wil be +3(80)93-111-11-11'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_countries:
+    UA: UA
+  allowed_types:
+    2: 2
+  extension_field: false
+field_type: phone_number

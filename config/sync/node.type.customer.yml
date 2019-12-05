@@ -1,0 +1,20 @@
+uuid: 29c03002-886b-4bc4-9ce2-7161f3728fe3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: jK7kV4XiAObX8LqW1mVx0M41ZQ3M7w15qy9-7maKQQA
+name: Customer
+type: customer
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

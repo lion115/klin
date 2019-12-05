@@ -1,0 +1,151 @@
+uuid: 457cafb3-78aa-4a31-bd73-0cc7152ab2ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_customer_name
+    - field.storage.node.field_customer_surname
+    - field.storage.node.field_email
+    - field.storage.node.field_phone_number
+    - search_api.server.klindb
+  module:
+    - node
+    - search_api
+id: kiln_index
+name: klin_index
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_customer_name:
+    label: 'Customer Name'
+    datasource_id: 'entity:node'
+    property_path: field_customer_name
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_customer_name
+  field_customer_surname:
+    label: 'Customer Surname'
+    datasource_id: 'entity:node'
+    property_path: field_customer_surname
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_customer_surname
+  field_email:
+    label: Email
+    datasource_id: 'entity:node'
+    property_path: field_email
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_email
+  local_number:
+    label: 'Phone number » Local Number'
+    datasource_id: 'entity:node'
+    property_path: 'field_phone_number:local_number'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_phone_number
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - customer
+    languages:
+      default: false
+      selected:
+        - en
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  ignore_character:
+    all_fields: false
+    fields: {  }
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  ignorecase:
+    all_fields: false
+    fields: {  }
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: klindb
