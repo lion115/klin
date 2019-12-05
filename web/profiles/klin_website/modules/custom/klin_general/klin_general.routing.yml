@@ -1,0 +1,15 @@
+clsoe_day:
+  path: '/order/close_day'
+  defaults:
+    _controller: '\Drupal\klin_general\Controller\CloseDayController::closeDay'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+
+reopen_day:
+  path: '/order/reopen_day'
+  defaults:
+    _controller: '\Drupal\klin_general\Controller\CloseDayController::reopenDay'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'

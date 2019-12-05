@@ -1,0 +1,12 @@
+a:hover {
+    border-bottom-style: none;
+}
+
+.alert .field__label,
+.alert .field__item {
+    color: #000;
+}
+
+body{
+    background: #292929!important;
+}

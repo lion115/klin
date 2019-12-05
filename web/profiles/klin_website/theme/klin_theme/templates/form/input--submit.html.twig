@@ -1,0 +1,7 @@
+{%
+    set classes = [
+    'btn',
+    'btn-success',
+]
+%}
+<input{{attributes.removeClass(['form-submit', 'button']).addClass(classes)}}  />{{ children }}

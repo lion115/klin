@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.order.body
+    - field.field.node.order.field_close_day
     - field.field.node.order.field_customer_title
     - node.type.order
   module:
+    - datetime
     - text
     - user
 id: node.order.default
@@ -20,6 +22,15 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_close_day:
+    weight: 2
+    label: above
+    settings:
+      timezone_override: Europe/Kiev
+      format_type: short
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   links:
     weight: 1

@@ -1,10 +1,10 @@
 name: Klin
 type: theme
-base theme: classy
+base theme: bartik
 description: 'A flexible theme based on classy theme for the website of Klin.'
 core: 8.x
 libraries:
-  - forklift_theme/base
+  - klin_theme/base
 regions:
   header: Header
   primary_menu: 'Primary menu'

@@ -37,11 +37,11 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
-          reset_button: false
+          submit_button: Seacrh
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
@@ -64,6 +64,10 @@ display:
             next: ››
       style:
         type: default
+        options:
+          row_class: 'alert alert-success'
+          default_row_class: true
+          uses_fields: false
       row:
         type: search_api
       fields:

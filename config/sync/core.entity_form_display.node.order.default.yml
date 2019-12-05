@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.order.body
+    - field.field.node.order.field_close_day
     - field.field.node.order.field_customer_title
     - node.type.order
   module:
+    - datetime
     - path
     - text
 id: node.order.default
@@ -29,6 +31,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_close_day:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_customer_title:
     weight: 7
     settings:

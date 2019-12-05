@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.order.body
+    - field.field.node.order.field_close_day
     - field.field.node.order.field_customer_title
     - node.type.order
   module:
+    - datetime
     - text
     - user
 id: node.order.teaser
@@ -18,13 +20,22 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 1
     settings:
       trim_length: 600
     third_party_settings: {  }
     region: content
+  field_close_day:
+    type: datetime_default
+    weight: 2
+    region: content
+    label: above
+    settings:
+      timezone_override: Europe/Kiev
+      format_type: short
+    third_party_settings: {  }
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }

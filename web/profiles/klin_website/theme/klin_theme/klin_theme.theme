@@ -1,0 +1,171 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the klin theme.
+ */
+
+use Drupal\node\Entity\Node;
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+function klin_theme_preprocess_html(&$variables)
+{
+    if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+        $variables['attributes']['class'][] = 'layout-two-sidebars';
+    } elseif (!empty($variables['page']['sidebar_first'])) {
+        $variables['attributes']['class'][] = 'layout-one-sidebar';
+        $variables['attributes']['class'][] = 'layout-sidebar-first';
+    } elseif (!empty($variables['page']['sidebar_second'])) {
+        $variables['attributes']['class'][] = 'layout-one-sidebar';
+        $variables['attributes']['class'][] = 'layout-sidebar-second';
+    } else {
+        $variables['attributes']['class'][] = 'layout-no-sidebars';
+    }
+
+    if (!empty($variables['page']['featured_top'])) {
+        $variables['attributes']['class'][] = 'has-featured-top';
+    }
+
+    try {
+        $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+    } catch (Exception $e) {
+        // If the database is not yet available, set default values for these
+        // variables.
+        $variables['is_front'] = FALSE;
+    }
+
+    // If we're on the front page.
+    if (!$variables['is_front']) {
+        // Add unique classes for each page and website section.
+        $path = \Drupal::service('path.current')->getPath();
+        $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+        $alias = trim($alias, '/');
+        $alias = str_replace('/', '-', $alias);
+        if (!empty($alias)) {
+            $variables['attributes']['class'][] = 'page-' . $alias;
+            list($section,) = explode('/', $alias, 2);
+            if (!empty($section)) {
+                $variables['attributes']['class'][] = 'section-' . $section;
+            }
+        }
+
+        $node = \Drupal::routeMatch()->getParameter('node');
+        if ($node instanceof \Drupal\node\NodeInterface) {
+            $variables['attributes']['id'] = $node->id();
+        }
+        // Add cacheability metadata.
+        $theme_name = \Drupal::theme()->getActiveTheme()->getName();
+        $theme_settings = \Drupal::config($theme_name . '.settings');
+        CacheableMetadata::createFromRenderArray($variables)
+            ->addCacheableDependency($theme_settings)
+            ->applyTo($variables);
+        // Union all theme setting variables to the html.html.twig template.
+        $variables += $theme_settings->getOriginal();
+        $variables['head_title']['name'] = t('Klin');
+
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page title templates.
+ */
+function klin_theme_preprocess_page_title(&$variables)
+{
+    // Since the title and the shortcut link are both block level elements,
+    // positioning them next to each other is much simpler with a wrapper div.
+    if (!empty($variables['title_suffix']['add_or_remove_shortcut']) && $variables['title']) {
+        // Add a wrapper div using the title_prefix and title_suffix render
+        // elements.
+        $variables['title_prefix']['shortcut_wrapper'] = [
+            '#markup' => '<div class="shortcut-wrapper clearfix">',
+            '#weight' => 100,
+        ];
+        $variables['title_suffix']['shortcut_wrapper'] = [
+            '#markup' => '</div>',
+            '#weight' => -99,
+        ];
+        // Make sure the shortcut link is the first item in title_suffix.
+        $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function klin_theme_preprocess_node(&$variables)
+{
+    // Remove the "Add new comment" link on teasers or when the comment form is
+    // displayed on the page.
+    if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
+        unset($variables['content']['links']['comment']['#links']['comment-add']);
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function klin_theme_preprocess_block(&$variables)
+{
+    $variables['content']['#attributes']['block'] = $variables['attributes']['id'];
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function klin_theme_preprocess(&$variables, $hook)
+{
+
+    $variables['base_path'] = base_path();
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu.html.twig.
+ */
+function klin_theme_preprocess_menu(&$variables)
+{
+    $variables['attributes']['class'][] = 'clearfix';
+}
+
+
+function klin_theme_preprocess_form(&$variables)
+{
+    $variables['element']['actions']['submit']['#attributes']['class'] = 'btn btn-success';
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function klin_theme_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
+    // Add content type suggestions.
+    // Revision page will return nid instead of node.
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        if (is_numeric($node)) {
+            $node = Node::load($node);
+        }
+
+        if ($node instanceof NodeInterface) {
+            array_splice($suggestions, 1, 0, 'page__' . $node->getType());
+        }
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function klim_theme_theme_suggestions_menu_alter(array &$suggestions, array $variables)
+{
+    // Remove the block and replace dashes with underscores in the block ID to
+    // use for the hook name.
+    if (isset($variables['attributes']['block'])) {
+        $hook = str_replace(array('block-', '-'), array('', '_'), $variables['attributes']['block']);
+        $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
+    }
+}

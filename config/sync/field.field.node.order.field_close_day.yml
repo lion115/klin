@@ -1,0 +1,21 @@
+uuid: 8b1ed839-b7af-4ed5-ab7f-cda75f2ba96c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_close_day
+    - node.type.order
+  module:
+    - datetime
+id: node.order.field_close_day
+field_name: field_close_day
+entity_type: node
+bundle: order
+label: 'Close Day'
+description: 'When order was closed'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -4,8 +4,13 @@ base:
   css:
     theme:
       css/styles.css: {}
+      bootstrap/css/bootstrap.css: {}
+      bootstrap/css/bootstrap-grid.css: {}
+      bootstrap/css/bootstrap-reboot.css: {}
   js:
     js/main.js: {}
+    bootstrap/js/bootstrap.bundle.js: {}
+    bootstrap/js/bootstrap.js: {}
   dependencies:
     - core/drupal
     - core/drupalSettings
