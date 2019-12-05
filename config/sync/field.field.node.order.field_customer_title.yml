@@ -1,0 +1,28 @@
+uuid: 0af45b32-50a7-4b30-afcf-ca8d37cf045f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_customer_title
+    - node.type.customer
+    - node.type.order
+id: node.order.field_customer_title
+field_name: field_customer_title
+entity_type: node
+bundle: order
+label: 'Customer Title'
+description: 'Insert Customer Title (hash) to find customer. NOTICE!!!YOU CAN''T CREATE ORDER WITHOUT CUSTOMER'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      customer: customer
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

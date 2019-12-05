@@ -1,0 +1,33 @@
+uuid: 87d0eada-148d-4f2f-bf32-f09887a28ff1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.order.body
+    - field.field.node.order.field_customer_title
+    - node.type.order
+  module:
+    - text
+    - user
+id: node.order.teaser
+targetEntityType: node
+bundle: order
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_customer_title: true
+  search_api_excerpt: true

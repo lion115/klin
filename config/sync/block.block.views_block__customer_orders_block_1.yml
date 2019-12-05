@@ -1,0 +1,25 @@
+uuid: 704795a9-6b26-4e77-aa06-c7eb9bb50f64
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.customer_orders
+  module:
+    - views
+  theme:
+    - bartik
+id: views_block__customer_orders_block_1
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:customer_orders-block_1'
+settings:
+  id: 'views_block:customer_orders-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }

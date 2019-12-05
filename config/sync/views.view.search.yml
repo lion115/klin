@@ -388,7 +388,7 @@ display:
             group_items: {  }
           plugin_id: search_api_text
       sorts: {  }
-      title: Search
+      title: ' Customer search'
       header: {  }
       footer: {  }
       empty: {  }
@@ -409,10 +409,15 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: search
+      path: сustomer_search
       menu:
         type: normal
-        title: Search
+        title: ' Customer search'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
         menu_name: tools
       exposed_block: true
     cache_metadata:
