@@ -1,0 +1,27 @@
+uuid: 759c5b6e-c7b6-4c12-9ffa-7ac7d25ee62a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: vNBYPiAyID2rphpT1U9c6TfQx1QRXHQI1ZltavFvPy4
+id: klin_theme_account_menu
+theme: klin_theme
+region: secondary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

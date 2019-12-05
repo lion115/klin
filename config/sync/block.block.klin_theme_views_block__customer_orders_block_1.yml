@@ -1,4 +1,4 @@
-uuid: 704795a9-6b26-4e77-aa06-c7eb9bb50f64
+uuid: 15f12c4c-de0b-4c3d-95d4-8edb773adddc
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,9 @@ dependencies:
     - node
     - views
   theme:
-    - bartik
-id: views_block__customer_orders_block_1
-theme: bartik
+    - klin_theme
+id: klin_theme_views_block__customer_orders_block_1
+theme: klin_theme
 region: sidebar_second
 weight: 0
 provider: null

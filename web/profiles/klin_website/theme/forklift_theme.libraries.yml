@@ -1,0 +1,15 @@
+base:
+  header: true
+  version: "1.0"
+  css:
+    theme:
+      css/styles.css: {}
+  js:
+    js/main.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+    - core/ajax
+    - core/drupal.ajax

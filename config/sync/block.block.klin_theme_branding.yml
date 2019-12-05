@@ -1,0 +1,25 @@
+uuid: 838adc29-5aed-478c-bcf0-0940b54b925b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: zCyyNkHmGdQMT63tEJTj9h77oGrCt0u1wvpgZEHPOkA
+id: klin_theme_branding
+theme: klin_theme
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

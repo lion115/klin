@@ -1,0 +1,22 @@
+uuid: d0b2a8cf-eaa5-4f02-a741-9ac0f204991c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: YphynPwnqGXsXqIZ0q4waQGCVyHXDpTinkoySk42h5Y
+id: klin_theme_breadcrumbs
+theme: klin_theme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,27 @@
+uuid: ceb60dce-d1eb-4348-ab77-dcb6f6f82e6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: 0M8lcwfHoPQBthISUgoJ8EBl4y3DuzzwfYhw7Vta_nQ
+id: klin_theme_tools
+theme: klin_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

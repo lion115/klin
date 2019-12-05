@@ -1,0 +1,22 @@
+uuid: 28d6f98b-08d2-4e95-84e0-313ce8f008a5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: TLd287Hgcl7bqXNk0MwnBsclG8YtGHE82iohxVCIrbo
+id: klin_theme_local_tasks
+theme: klin_theme
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

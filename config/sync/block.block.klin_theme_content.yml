@@ -1,0 +1,22 @@
+uuid: 32f319fd-34e4-475c-bac0-dba8bbc27f0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: 4HmtlySBQKfzEd5b6lQrJXsIxmXVlOsfYOoDsdBIzOY
+id: klin_theme_content
+theme: klin_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

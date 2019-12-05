@@ -1,0 +1,27 @@
+uuid: abe3a14c-c545-457b-b274-2941c412273c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: gC7a5zGiHxsm3wjQhC2-fx0QP8QunHKxvCV6sWVV69Q
+id: klin_theme_main_menu
+theme: klin_theme
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

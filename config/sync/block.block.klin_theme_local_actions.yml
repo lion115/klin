@@ -1,0 +1,20 @@
+uuid: 2f569f5b-5191-4d71-888a-cdf9b670eabc
+langcode: en
+status: true
+dependencies:
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: Z4n-erc_lreDPAws8yRsPH4Qu73U3pkGhOUB47lPBc4
+id: klin_theme_local_actions
+theme: klin_theme
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

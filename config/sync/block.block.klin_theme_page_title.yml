@@ -1,0 +1,20 @@
+uuid: 7ee11dbb-82a2-403f-9546-bdae0ba55b3c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: jZ2gaBxxsHEcGtlcQDajwPPHyT4eVHE-I5lAbqbY4g0
+id: klin_theme_page_title
+theme: klin_theme
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

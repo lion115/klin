@@ -1,0 +1,22 @@
+uuid: 13493459-2646-4e91-890a-18d5940c7f20
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: gfYj0CjFJnDT1pE019Of1grbZ51Z9dvlN8QiaMvDjJI
+id: klin_theme_help
+theme: klin_theme
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

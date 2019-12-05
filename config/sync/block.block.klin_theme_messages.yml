@@ -1,0 +1,22 @@
+uuid: 32bba89c-e853-4e32-b752-3d131de82d02
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - klin_theme
+_core:
+  default_config_hash: ONlZdDZPZ25fWB2wkhgWOXGqsG0JeADH7mpUUtITNao
+id: klin_theme_messages
+theme: klin_theme
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }
