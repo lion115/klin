@@ -24,7 +24,7 @@
                 }).done(function (data) {
                     console.log(data);
                     if (data && data.status === 'ok') {
-                        elem.replaceWith('<button class="btn btn-danger closeOrder" type="button">Reopen Order</button>');
+                        elem.replaceWith('<button class="btn btn-danger closeOrder" type="button">Close Order</button>');
                         closeDay()
                     }
                 });
