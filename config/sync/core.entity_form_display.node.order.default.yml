@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.order.body
     - field.field.node.order.field_close_day
     - field.field.node.order.field_customer_title
+    - field.field.node.order.field_owner
+    - field.field.node.order.field_price
     - node.type.order
   module:
     - datetime
@@ -45,6 +47,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_owner:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_price:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   path:
     type: path

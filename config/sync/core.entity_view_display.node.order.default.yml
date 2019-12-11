@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.order.body
     - field.field.node.order.field_close_day
     - field.field.node.order.field_customer_title
+    - field.field.node.order.field_owner
+    - field.field.node.order.field_price
     - node.type.order
   module:
     - datetime
@@ -31,6 +33,25 @@ content:
       format_type: short
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_owner:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_price:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
     region: content
   links:
     weight: 1

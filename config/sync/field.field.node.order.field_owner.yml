@@ -1,0 +1,29 @@
+uuid: 9a0c2f32-d4f7-42e9-b460-2dcc7bf1f289
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_owner
+    - node.type.order
+    - taxonomy.vocabulary.owner
+id: node.order.field_owner
+field_name: field_owner
+entity_type: node
+bundle: order
+label: owner
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      owner: owner
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
