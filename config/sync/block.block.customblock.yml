@@ -15,7 +15,7 @@ provider: null
 plugin: klin_custom_block
 settings:
   id: klin_custom_block
-  label: 'The total price for all orders'
+  label: 'The total price of all orders'
   provider: klin_general
   label_display: visible
   contact_text:
