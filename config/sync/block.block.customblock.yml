@@ -1,0 +1,31 @@
+uuid: be53dbc7-95e4-4a0f-8532-9c0ea9b540a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - klin_general
+    - node
+  theme:
+    - klin_theme
+id: customblock
+theme: klin_theme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: klin_custom_block
+settings:
+  id: klin_custom_block
+  label: 'The total price for all orders'
+  provider: klin_general
+  label_display: visible
+  contact_text:
+    value: ''
+    format: basic_html
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      customer: customer
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
