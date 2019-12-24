@@ -33,13 +33,14 @@ class CustomBlock extends BlockBase implements BlockPluginInterface
             $qb = $connection->query(
                 'Select field_price_value FROM node__field_price np
                     Left Join node__field_customer_title nct ON nct.field_customer_title_target_id = ' . $node->id() . '
-                    Where np.entity_id IN (nct.entity_id);');
+                    Left Join node__field_close_day cd ON cd.entity_id = nct.entity_id
+                    Where np.entity_id IN (cd.entity_id);');
             while ($result = $qb->fetchAssoc()) {
                 $total += $result['field_price_value'];
             }
         }
         $build = array(
-            '#markup' => $total
+            '#markup' => $total . ' UAH'
         );
 
         return $build;
