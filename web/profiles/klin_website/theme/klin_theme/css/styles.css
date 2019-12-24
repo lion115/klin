@@ -10,3 +10,8 @@ a:hover {
 body{
     background: #292929!important;
 }
+
+.field--type-entity-reference .field__label {
+    font-size: unset;
+    font-weight: bold
+}

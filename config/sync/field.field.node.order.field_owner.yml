@@ -10,7 +10,7 @@ id: node.order.field_owner
 field_name: field_owner
 entity_type: node
 bundle: order
-label: owner
+label: Owner
 description: ''
 required: false
 translatable: false
